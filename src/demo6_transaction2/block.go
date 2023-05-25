@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"crypto/sha256"
 	"encoding/gob"
 	"fmt"
 	"time"
@@ -34,13 +33,12 @@ func NewBlock(transactions []*Transaction, prevBlockHash []byte) *Block {
 
 // 计算区块里所有交易的哈希
 func (b *Block) HashTransactions() []byte {
-	var txHashes [][]byte
-	var txHash [32]byte
+	var transactions [][]byte
 	for _, tx := range b.Transactions {
-		txHashes = append(txHashes, tx.ID)
+		transactions = append(transactions, tx.Serialize())
 	}
-	txHash = sha256.Sum256(bytes.Join(txHashes, []byte{}))
-	return txHash[:]
+	mTree := NewMerkleTree(transactions)
+	return mTree.RootNode.Data
 }
 
 // 对Block结构进行序列化
