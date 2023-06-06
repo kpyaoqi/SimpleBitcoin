@@ -1,0 +1,18 @@
+.\blockchain_go createwallet	
+
+.\blockchain_go createblockchain -address ----
+
+.\blockchain_go send -from ---- -to ---- -amount 6
+
+.\blockchain_go getbalance -address ----
+
+.\blockchain_go startnode
+
+copy blockchain_3000.db blockchain_genesis.db 
+
+16nG5zMsnZe5QeHvqUZVx1cpEvdCZ1eaUE
+
+19q1ZxWCcRBW5QbpukejgSJkNmxStdhR5d
+1QEXjw7fe1KtsiQX1RRKdTwHQeuZRacWtB
+1DCsUzKyk8UsnerDKG7kzK1LA5wjaxyd7G
+16QpCa221EuvPZKwbSZvj7M9z69CT5LLh7

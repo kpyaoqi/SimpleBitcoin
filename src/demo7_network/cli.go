@@ -14,7 +14,7 @@ type CLI struct {
 func (cli *CLI) Run() {
 	cli.validateArgs()
 
-	nodeID := os.Getenv("NODE_ID_A")
+	nodeID := os.Getenv("NODE_ID")
 	if nodeID == "" {
 		fmt.Printf("NODE_ID env. var is not set!")
 		os.Exit(1)
@@ -128,7 +128,7 @@ func (cli *CLI) Run() {
 	}
 
 	if startNodeCmd.Parsed() {
-		nodeID := os.Getenv("NODE_ID_A")
+		nodeID := os.Getenv("NODE_ID")
 		if nodeID == "" {
 			startNodeCmd.Usage()
 			os.Exit(1)

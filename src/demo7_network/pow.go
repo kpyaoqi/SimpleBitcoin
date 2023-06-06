@@ -9,7 +9,7 @@ import (
 )
 
 // 定义挖矿难度
-const targetBits = 24
+const targetBits = 8
 const maxNonce = math.MaxInt64
 
 type ProofOfWork struct {
